@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_time: 2015-01-19 10:55:05
+  crawling_time: 2015-01-19 10:55:05
+  keyword: MyString
+  _jobplanet: 1
+  _jobkorea: 1
+  _saramin: 1
+  _incruit: 1
+
+two:
+  start_time: 2015-01-19 10:55:05
+  crawling_time: 2015-01-19 10:55:05
+  keyword: MyString
+  _jobplanet: 1
+  _jobkorea: 1
+  _saramin: 1
+  _incruit: 1

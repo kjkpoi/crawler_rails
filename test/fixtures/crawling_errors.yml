@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_time: 2015-01-19 10:53:17
+  error_time: 2015-01-19 10:53:17
+  keyword: MyString
+  error_msg: MyText
+
+two:
+  start_time: 2015-01-19 10:53:17
+  error_time: 2015-01-19 10:53:17
+  keyword: MyString
+  error_msg: MyText

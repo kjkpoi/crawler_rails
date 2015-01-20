@@ -1,0 +1,5 @@
+username  crawler
+password  jobplanet
+host localhost
+port 3306
+database crawler_development
