@@ -30,7 +30,7 @@ class CrawlerController < ApplicationController
 			format.csv {
 				case params[:crawling_type]
 				when 'google'
-					send_data(@crawling_google.where(start_time: params[:start_time]).to_csv)
+					send_data(@crawling_google.where(start_time: params[:start_time]).to_csv, :type => 'text/csv; charset=iso-8859-1; ')
 				when 'naver'
 					send_data(@crawling_naver.where(start_time: params[:start_time]).to_csv)
 				else
