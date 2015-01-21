@@ -3,9 +3,10 @@ require 'resque/server'
 Rails.application.routes.draw do
 
 
-	post 'crawler/create', to: 'crawler#create'
+	post 'crawler/create'
 	
-	get 'crawler/manage', to: 'crawler#manage'
+	post 'crawler/manager'
+	get 'crawler/manager'
 
 	post 'crawler/download'
 	get 'crawler/download'
