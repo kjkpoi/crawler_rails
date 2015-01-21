@@ -21,9 +21,13 @@ class CrawlerRunnerNaver < CrawlerRunner
         error_info = Hash.new
         count_db = 0
         index = 0
-
+         db_manager.set_running('naver', start_time)
         while keyword_list.length > index do
             begin
+                unless db_manager.is_running('naver')
+                    puts 'stop crawling'
+                    break
+                end
                 current_keyword = keyword_list.keys[index]
                 relate_value = keyword_list.values[index]
 

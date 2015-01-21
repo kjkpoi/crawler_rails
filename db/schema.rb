@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150119020329) do
+ActiveRecord::Schema.define(version: 20150121055237) do
 
   create_table "crawling_errors", force: :cascade do |t|
     t.datetime "start_time"
@@ -56,6 +56,14 @@ ActiveRecord::Schema.define(version: 20150119020329) do
     t.integer  "_bizsite_incruit",     limit: 4,   default: 0
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
+  end
+
+  create_table "crawling_stops", force: :cascade do |t|
+    t.string   "crawler_name",   limit: 255
+    t.string   "current_status", limit: 255
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.datetime "start_time",                 null: false
   end
 
 end

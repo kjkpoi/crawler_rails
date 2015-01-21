@@ -11,8 +11,8 @@ class CrawlerNaver
 			end
 		end
 		puts company_list
-		crawler_runner_naver = CrawlerRunnerNaver.new(data['keyword_list'].split,
-				                                             data['deny_list'].split,
+		crawler_runner_naver = CrawlerRunnerNaver.new(data['keyword_list'].gsub(' ', '').split,
+				                                             data['deny_list'].gsub(' ', '').split,
 					                                           company_list,
 		                                                 './app/background_crawler/database_login_info.txt')
 		crawler_runner_naver.run

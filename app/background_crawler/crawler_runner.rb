@@ -10,6 +10,7 @@ class CrawlerRunner
     def initialize(keyword_list, deny_list)
         @keyword_list = keyword_list
         @deny_list = deny_list
+        @stop = false
     end
 
     def run

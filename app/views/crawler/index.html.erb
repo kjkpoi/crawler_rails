@@ -9,10 +9,14 @@
 </div>
 
 <div>
-  <%= link_to '크롤링 결과 다운로드', crawler_download_path %>
+  <%= link_to '크롤러 결과 다운로드', crawler_download_path %>
 </div>
 
 <div>
-  <a href="/resque">크롤러 상태 리스트</a>
+	<%= link_to '크롤러 관리자', crawler_manager_path %>
+</div>
+
+<div>
+  <a href="/resque">크롤러 상태 리스트 (Resque)</a>
 </div>
 

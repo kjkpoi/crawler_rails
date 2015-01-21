@@ -1,0 +1,24 @@
+<% CrawlingStop.all.collect{ |tuple|%>
+	<%= form_tag(controller: "crawler", action: "manager", type: tuple[:crawler_name]) do %>
+			
+		<label> <%= tuple[:crawler_name] + "_crawler 상태: " + tuple[:current_status] %> </label>
+
+		<% if tuple[:current_status] == 'RUNNING' %>
+			<%= submit_tag("stop", crawler_stop: tuple[:crawler_name]) %> 
+		<% end %>
+
+		<% if tuple[:crawler_name] == 'google' %>
+
+		<% elsif tuple[:crawler_name] == 'naver' %>
+
+		<% end %>
+	<% end %>
+<% } %>
+
+<div>
+	<%= link_to '새로고침', crawler_manager_path %>
+</div>
+
+<div>
+	<%= link_to '뒤로가기', crawler_path %>
+</div>

@@ -13,6 +13,9 @@ end
 class Crawling_naver < ActiveRecord::Base
 end
 
+class Crawling_stop < ActiveRecord::Base
+end
+
 class DatabaseManager
 
     def initialize(db_login_info)
@@ -44,12 +47,26 @@ class DatabaseManager
         index = 0
         keyword_list = Hash.new
         Crawling_missing_job.where(:start_time => start_time).select('keyword, is_done') do |job|
-            puts job[:keyword].encoding
             keyword_list[job.keyword] = 1
             if job[:is_done] == 1
                 index = index + 1
             end
         end
         return keyword_list, index
+    end
+
+    def set_running(data, start_time)
+        crawling_stop = Crawling_stop.find_by(crawler_name: data)
+        crawling_stop[:current_status] = 'RUNNING'
+        crawling_stop[:start_time] = start_time
+        crawling_stop.save!
+    end
+
+    def is_running(data)
+        crawling_stop = Crawling_stop.find_by(crawler_name: data)
+        unless crawling_stop[:current_status] == 'RUNNING'
+            return false
+        end
+        return true
     end
 end

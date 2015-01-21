@@ -21,7 +21,6 @@ class CrawlerController < ApplicationController
 		end
 	end
 
-
 	def download
 		@crawling_google = CrawlingGoogle.all
 		@crawling_naver = CrawlingNaver.all
@@ -40,6 +39,11 @@ class CrawlerController < ApplicationController
 		end
 	end
 
-	def manage
+	def manager
+		if params[:commit] == 'stop'
+			crawling_stop = CrawlingStop.find_by(crawler_name: params[:type])
+			crawling_stop[:current_status] = 'STOP'
+			crawling_stop.save!
+		end
 	end
 end
