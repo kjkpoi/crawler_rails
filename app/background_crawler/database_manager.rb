@@ -55,10 +55,9 @@ class DatabaseManager
         return keyword_list, index
     end
 
-    def set_running(data, start_time)
+    def set_running(data)
         crawling_stop = Crawling_stop.find_by(crawler_name: data)
         crawling_stop[:current_status] = 'RUNNING'
-        crawling_stop[:start_time] = start_time
         crawling_stop.save!
     end
 

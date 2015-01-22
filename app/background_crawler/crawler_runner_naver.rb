@@ -21,7 +21,7 @@ class CrawlerRunnerNaver < CrawlerRunner
         error_info = Hash.new
         count_db = 0
         index = 0
-         db_manager.set_running('naver', start_time)
+         db_manager.set_running('naver')
         while keyword_list.length > index do
             begin
                 unless db_manager.is_running('naver')

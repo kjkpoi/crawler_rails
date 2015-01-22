@@ -20,7 +20,7 @@ class CrawlerRunnerGoogle < CrawlerRunner
         error_info = Hash.new
         count_db = 0
         index = 0
-        db_manager.set_running('google', start_time)
+        db_manager.set_running('google')
         while keyword_list.length > index do
             begin
                 unless db_manager.is_running('google')
